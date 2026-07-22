@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="申鎧國際停車場經營管理、營業據點、最新消息與月租申請。" />
+  <title>申鎧國際｜專業停車場經營管理</title>
+
+  <style>
+    :root {
+      --primary: #163b67;
+      --primary-dark: #0d2744;
+      --primary-light: #eaf2fb;
+      --accent: #f4b63f;
+      --accent-dark: #d99616;
+      --text: #202936;
+      --muted: #6d7785;
+      --line: #e3e8ef;
+      --surface: #ffffff;
+      --surface-soft: #f5f8fb;
+      --shadow: 0 16px 40px rgba(22, 59, 103, 0.12);
+      --radius: 20px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    iframe {
+      border: 0;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-soft {
+      background: var(--surface-soft);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading.center {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .section-heading.center .eyebrow {
+      justify-content: center;
+    }
+
+    .section-heading h2 {
+      color: var(--primary-dark);
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+    }
+
+    .section-heading p {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 11px 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 900;
+      transition: 0.22s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 10px 24px rgba(22, 59, 103, 0.23);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-accent {
+      color: var(--primary-dark);
+      background: var(--accent);
+      box-shadow: 0 10px 24px rgba(244, 182, 63, 0.28);
+    }
+
+    .btn-accent:hover {
+      background: #ffc75d;
+    }
+
+    .btn-outline {
+      color: var(--primary);
+      border-color: rgba(22, 59, 103, 0.24);
+      background: #fff;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(7, 27, 48, 0.74);
+      backdrop-filter: blur(14px);
+      transition: 0.25s ease;
+    }
+
+    .site-header.scrolled {
+      border-bottom-color: var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 8px 24px rgba(14, 39, 68, 0.08);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 24px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .site-header.scrolled .logo {
+      color: var(--primary-dark);
+    }
+
+    .logo-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      color: var(--primary-dark);
+      background:
+          url("images/logo.png")
+          center/cover no-repeat;
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .logo small {
+      display: block;
+      margin-top: -4px;
+      font-size: 10px;
+      font-weight: 700;
+      opacity: 0.72;
+      letter-spacing: 0.08em;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .main-nav a {
+      padding: 9px 12px;
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .site-header.scrolled .main-nav a {
+      color: #354255;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+      color: var(--primary-dark);
+      background: var(--accent);
+    }
+
+    .main-nav .nav-cta {
+      margin-left: 8px;
+      color: var(--primary-dark);
+      background: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 12px;
+      color: var(--primary-dark);
+      background: var(--accent);
+      cursor: pointer;
+      font-size: 21px;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      align-items: center;
+      min-height: 630px;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(7, 27, 48, 0.96) 0%, rgba(7, 27, 48, 0.84) 46%, rgba(7, 27, 48, 0.38) 100%),
+        url("https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 160px;
+      background: linear-gradient(transparent, rgba(7, 27, 48, 0.42));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding-top: 80px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.09);
+      font-size: 14px;
+      font-weight: 800;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-badge span {
+      color: var(--accent);
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      font-size: clamp(46px, 7vw, 80px);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: clamp(17px, 2.2vw, 21px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .news-item {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgba(20, 45, 76, 0.05);
+    }
+
+    .news-trigger {
+      display: grid;
+      grid-template-columns: 120px 1fr auto;
+      align-items: center;
+      width: 100%;
+      gap: 22px;
+      padding: 22px 24px;
+      border: 0;
+      color: inherit;
+      background: #fff;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .news-trigger:hover {
+      background: #fbfcfe;
+    }
+
+    .news-date {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .news-title {
+      color: var(--primary-dark);
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .news-icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      font-size: 21px;
+      transition: transform 0.25s ease;
+    }
+
+    .news-item.open .news-icon {
+      transform: rotate(45deg);
+    }
+
+    .news-detail {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.28s ease;
+    }
+
+    .news-item.open .news-detail {
+      grid-template-rows: 1fr;
+    }
+
+    .news-detail-inner {
+      overflow: hidden;
+    }
+
+    .news-detail-content {
+      padding: 0 24px 24px 166px;
+      color: var(--muted);
+    }
+
+    .news-detail-content p + p {
+      margin-top: 10px;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .location-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(20, 45, 76, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .location-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .map-wrap {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #dfe6ee;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .location-body {
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      padding: 22px;
+    }
+
+    .location-type {
+      align-self: flex-start;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--primary);
+      background: var(--primary-light);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .location-body h3 {
+      margin-top: 13px;
+      color: var(--primary-dark);
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .location-info {
+      display: grid;
+      gap: 11px;
+      margin-top: 18px;
+    }
+
+    .location-info .license-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .location-info .license-row dt,
+    .location-info .license-row dd {
+      white-space: nowrap;
+    }
+
+    .location-info div {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 8px;
+    }
+
+    .location-info dt {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .location-info dd {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .rent-cta {
+      position: relative;
+      overflow: hidden;
+      padding: 58px;
+      border-radius: 32px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 86% 12%, rgba(244, 182, 63, 0.48), transparent 29%),
+        linear-gradient(135deg, var(--primary-dark), var(--primary));
+      box-shadow: var(--shadow);
+    }
+
+    .rent-cta::before {
+      content: "P";
+      position: absolute;
+      right: 42px;
+      bottom: -86px;
+      color: rgba(255, 255, 255, 0.07);
+      font-size: 260px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .rent-cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 690px;
+    }
+
+    .rent-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--primary-dark);
+      background: var(--accent);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .rent-status::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #1d8f45;
+    }
+
+    .rent-status.closed {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .rent-status.closed::before {
+      background: #ff8a8a;
+    }
+
+    .rent-cta h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.18;
+    }
+
+    .rent-cta p {
+      margin: 16px 0 28px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 17px;
+    }
+
+    .rent-cta .btn.disabled {
+      pointer-events: none;
+      color: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      display: grid;
+      grid-template-columns: 50% 1fr;
+      min-height: 230px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      transition: 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-image {
+      min-height: 100%;
+      background: #dfe6ee;
+    }
+
+    .service-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .service-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .service-card h3 {
+      color: var(--primary-dark);
+      font-size: 22px;
+      line-height: 1.4;
+    }
+
+    .service-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 62px;
+    }
+
+    .about-team {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .about-team .eyebrow {
+      grid-column: 1 / -1;
+    }
+
+    .team-member {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .team-member-image {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #dfe6ee;
+    }
+
+    .team-member-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-member-name {
+      padding: 16px 18px;
+      color: var(--primary-dark);
+      background: #fff;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .about-copy h2 {
+      color: var(--primary-dark);
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.2;
+    }
+
+    .about-copy p {
+      margin-top: 19px;
+      color: var(--muted);
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .about-point {
+      padding: 15px;
+      border-radius: 14px;
+      color: var(--primary-dark);
+      background: var(--surface-soft);
+      font-weight: 900;
+    }
+
+    .site-footer {
+      padding: 50px 0 34px;
+      color: rgba(255, 255, 255, 0.72);
+      background: #071b30;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 0.8fr;
+      gap: 50px;
+    }
+
+    .footer-brand p {
+      margin-top: 15px;
+      max-width: 440px;
+      font-size: 14px;
+    }
+
+    .footer-title {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .footer-list {
+      display: grid;
+      gap: 9px;
+      margin-top: 13px;
+      font-size: 14px;
+    }
+
+    .footer-list a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      margin-top: 38px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1024px) {
+      .main-nav {
+        position: fixed;
+        top: 76px;
+        right: 18px;
+        left: 18px;
+        display: none;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .main-nav.open {
+        display: grid;
+      }
+
+      .main-nav a,
+      .site-header.scrolled .main-nav a {
+        color: var(--primary-dark);
+      }
+
+      .main-nav .nav-cta {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .locations-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-member-image {
+        aspect-ratio: 1 / 1;
+      }
+
+      .about-image {
+        max-width: 760px;
+      }
+
+      .about-badge {
+        right: 24px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      html {
+        scroll-padding-top: 72px;
+      }
+
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .main-nav {
+        top: 68px;
+      }
+
+      .logo-text {
+        font-size: 15px;
+      }
+
+      .hero {
+        min-height: 690px;
+        background:
+          linear-gradient(180deg, rgba(7, 27, 48, 0.93) 0%, rgba(7, 27, 48, 0.76) 100%),
+          url("https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?auto=format&fit=crop&w=1200&q=82")
+          center/cover no-repeat;
+      }
+
+      .hero-content {
+        padding-top: 80px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .news-trigger {
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        padding: 19px;
+      }
+
+      .news-date {
+        grid-column: 1 / -1;
+      }
+
+      .news-detail-content {
+        padding: 0 19px 20px;
+      }
+
+      .locations-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        grid-template-columns: 1fr;
+      }
+
+      .service-image {
+        min-height: 220px;
+        aspect-ratio: 16 / 9;
+      }
+
+      .location-body {
+        min-height: auto;
+      }
+
+      .rent-cta {
+        padding: 38px 24px;
+      }
+
+      .rent-cta::before {
+        right: -15px;
+        font-size: 190px;
+      }
+
+      .about-image img {
+        min-height: 360px;
+      }
+
+      .about-badge {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: calc(100% - 32px);
+        margin: -48px auto 0;
+      }
+
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="申鎧國際首頁">
+        <span class="logo-mark"></span>
+        <span class="logo-text">
+          申鎧國際
+          <small>SHEEN CAR PARKING</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="主要導覽">
+        <a href="#news">最新消息</a>
+        <a href="#locations">營業據點</a>
+        <a href="#monthly-rent">月租申請</a>
+        <a href="#services">主要服務</a>
+        <a href="#about">關於我們</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="開啟選單" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 01 Hero Banner -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>讓停車更便利，讓管理更安心。</h1>
+          <p>
+            從場域評估、設備規劃到日常營運，提供安全、穩定且值得信賴的停車服務。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 最新消息：固定保留三則，點擊展開內容 -->
+    <section class="section" id="news">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Latest News</span>
+          <h2>最新消息</h2>
+          <p></p>
+        </div>
+
+        <div class="news-list">
+          <article class="news-item open">
+            <button class="news-trigger" type="button" aria-expanded="true">
+              <span class="news-date">2025.06.02</span>
+              <span class="news-title">金山立體停車場月票登記及抽籤作業公告</span>
+              <span class="news-icon" aria-hidden="true">＋</span>
+            </button>
+            <div class="news-detail">
+              <div class="news-detail-inner">
+                <div class="news-detail-content">
+                  <p>金山立體停車場汽車月票登記抽籤已於114/05/29（四）上午10點在管理室外完成本次抽籤作業。如欲查詢本次月票名單，可至新北市政府交通局網站查詢抽籤結果。（ 新北市政府交通局 <a href="https://www.traffic.ntpc.gov.tw/home.jsp?id=c217d7604e23a198" target="_blank" rel="noopener noreferrer">https://www.traffic.ntpc.gov.tw/home.jsp?id=c217d7604e23a198</a> ）</p> 
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <button class="news-trigger" type="button" aria-expanded="false">
+              <span class="news-date">2024.09.01</span>
+              <span class="news-title">導入 ISO 9001：2015 品質管理系統</span>
+              <span class="news-icon" aria-hidden="true">＋</span>
+            </button>
+            <div class="news-detail">
+              <div class="news-detail-inner">
+                <div class="news-detail-content">
+                  <p>申鎧國際自 2024 年 9 月起導入 ISO 9001：2015 品質管理系統，持續整理與改善服務流程、營運管理及品質追蹤機制。</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <button class="news-trigger" type="button" aria-expanded="false">
+              <span class="news-date">2024.03.04</span>
+              <span class="news-title">中角灣遊客中心及依海廚房服務資訊</span>
+              <span class="news-icon" aria-hidden="true">＋</span>
+            </button>
+            <div class="news-detail">
+              <div class="news-detail-inner">
+                <div class="news-detail-content">
+                  <p>遊客中心及餐飲服務時間會依季節與現場營運狀況調整，前往前建議先確認最新公告或致電服務據點。</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 營業據點：Google 地圖直接顯示於卡片圖片區 -->
+    <section class="section section-soft" id="locations">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Locations</span>
+          <h2>營業據點</h2>
+          <p></p>
+        </div>
+
+        <div class="locations-grid">
+
+          <article class="location-card">
+            <div class="map-wrap">
+              <iframe
+                title="林口區停一停車場 Google 地圖"
+                src="https://www.google.com/maps?q=%E6%9E%97%E5%8F%A3%E5%8D%80%E5%81%9C%E4%B8%80%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E6%96%B0%E5%8C%97%E5%B8%82%E6%9E%97%E5%8F%A3%E5%8D%80%E7%AB%B9%E6%9E%97%E8%B7%AF%E8%88%87%E7%AB%B9%E6%9E%97%E4%B8%80%E8%B7%AF%E5%8F%A3&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="location-body">
+              <h3>林口區停一停車場</h3>
+              <dl class="location-info">
+                <div class="license-row">
+                  <dt>停車場登記證編號</dt>
+                  <dd>６４６６</dd>
+                </div>
+                <div>
+                  <dt>地址</dt>
+                  <dd>新北市林口區竹林路與竹林一路口</dd>
+                </div>
+                <div>
+                  <dt>營業時間</dt>
+                  <dd>24小時</dd>
+                </div>
+                <div>
+                  <dt>車位數</dt>
+                  <dd>54格(含婦幼車格4格、含身心障礙車格2格)</dd>
+                </div>
+                <div>
+                  <dt>收費標準</dt>
+                  <dd>平日每次60元/假日每次90元，隔日另計</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="map-wrap">
+              <iframe
+                title="林口區停二停車場 Google 地圖"
+                src="https://www.google.com/maps?q=%E6%9E%97%E5%8F%A3%E5%8D%80%E5%81%9C%E4%BA%8C%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E6%96%B0%E5%8C%97%E5%B8%82%E6%9E%97%E5%8F%A3%E5%8D%80%E7%AB%B9%E6%9E%97%E8%B7%AF281%E5%B7%B7%E8%88%87%E7%AB%B9%E6%9E%97%E8%B7%AF148%E5%B7%B7%E4%BA%A4%E5%8F%89%E5%8F%A3&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="location-body">
+              <h3>林口區停二停車場</h3>
+              <dl class="location-info">
+                <div class="license-row">
+                  <dt>停車場登記證編號</dt>
+                  <dd>６４６７</dd>
+                </div>
+                <div>
+                  <dt>地址</dt>
+                  <dd>新北市林口區竹林路281巷與竹林路148巷交叉口</dd>
+                </div>
+                <div>
+                  <dt>營業時間</dt>
+                  <dd>24小時</dd>
+                </div>
+                <div>
+                  <dt>車位數</dt>
+                  <dd>汽車：86格(含婦幼車格4格、含身心障礙車格2格)；機車：20格(含身心障礙車格2格)</dd>
+                </div>
+                <div>
+                  <dt>收費標準</dt>
+                  <dd>平日每次60元/假日每次90元，隔日另計</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="map-wrap">
+              <iframe
+                title="林口區東勢市場停車場 Google 地圖"
+                src="https://www.google.com/maps?q=%E6%9E%97%E5%8F%A3%E5%8D%80%E6%9D%B1%E5%8B%A2%E5%B8%82%E5%A0%B4%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E6%96%B0%E5%8C%97%E5%B8%82%E6%9E%97%E5%8F%A3%E5%8D%80%E9%BA%97%E5%9C%92%E4%B8%80%E8%A1%9735%E8%99%9F&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="location-body">
+              <h3>林口區東勢市場停車場</h3>
+              <dl class="location-info">
+                <div class="license-row">
+                  <dt>停車場登記證編號</dt>
+                  <dd>７０２６</dd>
+                </div>
+                <div>
+                  <dt>地址</dt>
+                  <dd>新北市林口區麗園一街35號</dd>
+                </div>
+                <div>
+                  <dt>營業時間</dt>
+                  <dd>24小時</dd>
+                </div>
+                <div>
+                  <dt>車位數</dt>
+                  <dd>64格(含婦幼車格2格、含身心障礙車格2格)</dd>
+                </div>
+                <div>
+                  <dt>收費標準</dt>
+                  <dd>每小時20元(當日上限120元)，隔日另計</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="map-wrap">
+              <iframe
+                title="林口區林口市場停車場 Google 地圖"
+                src="https://www.google.com/maps?q=%E6%9E%97%E5%8F%A3%E5%8D%80%E6%9E%97%E5%8F%A3%E5%B8%82%E5%A0%B4%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E6%96%B0%E5%8C%97%E5%B8%82%E6%9E%97%E5%8F%A3%E5%8D%80%E6%9E%97%E5%8F%A3%E8%B7%AF15%E8%99%9F&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="location-body">
+              <h3>林口區林口市場停車場</h3>
+              <dl class="location-info">
+                <div class="license-row">
+                  <dt>停車場登記證編號</dt>
+                  <dd>７０２７</dd>
+                </div>
+                <div>
+                  <dt>地址</dt>
+                  <dd>新北市林口區林口路15號</dd>
+                </div>
+                <div>
+                  <dt>營業時間</dt>
+                  <dd>24小時</dd>
+                </div>
+                <div>
+                  <dt>車位數</dt>
+                  <dd>汽車23格(含婦幼車格1格、含身心障礙車格1格)；機車23格(含身心障礙車格1格)</dd>
+                </div>
+                <div>
+                  <dt>收費標準</dt>
+                  <dd>汽車每小時20元(當日上限120元)；機車每次10元，隔日另計<br></dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="map-wrap">
+              <iframe
+                title="金山區市地重劃 B 區停車場 Google 地圖"
+                src="https://www.google.com/maps?q=%E9%87%91%E5%B1%B1%E5%8D%80%E5%B8%82%E5%9C%B0%E9%87%8D%E5%8A%83%20B%20%E5%8D%80%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E6%96%B0%E5%8C%97%E5%B8%82%E9%87%91%E5%B1%B1%E5%8D%80%E4%BB%81%E6%84%9B%E8%B7%AF9%E8%99%9F&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="location-body">
+              <h3>金山區市地重劃 B 區停車場</h3>
+              <dl class="location-info">
+                <div class="license-row">
+                  <dt>停車場登記證編號</dt>
+                  <dd>７０２８</dd>
+                </div>
+                <div>
+                  <dt>地址</dt>
+                  <dd>新北市金山區仁愛路9號</dd>
+                </div>
+                <div>
+                  <dt>營業時間</dt>
+                  <dd>24小時</dd>
+                </div>
+                <div>
+                  <dt>車位數</dt>
+                  <dd>20格(含婦幼車格1格、含身心障礙車格1格)</dd>
+                </div>
+                <div>
+                  <dt>收費標準</dt>
+                  <dd>平日每小時20元(當日上限120元，隔日另計)；假日每小時30元(當日上限200元，隔日另計)</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="map-wrap">
+              <iframe
+                title="金山區金山立體停車場 Google 地圖"
+                src="https://www.google.com/maps?q=%E9%87%91%E5%B1%B1%E5%8D%80%E9%87%91%E5%B1%B1%E7%AB%8B%E9%AB%94%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E6%96%B0%E5%8C%97%E5%B8%82%E9%87%91%E5%B1%B1%E5%8D%80%E4%B8%AD%E8%88%88%E8%B7%AF101%E8%99%9F&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="location-body">
+              <h3>金山區金山立體停車場</h3>
+              <dl class="location-info">
+                <div class="license-row">
+                  <dt>停車場登記證編號</dt>
+                  <dd>７１２５</dd>
+                </div>
+                <div>
+                  <dt>地址</dt>
+                  <dd>新北市金山區中興路101號</dd>
+                </div>
+                <div>
+                  <dt>營業時間</dt>
+                  <dd>24小時</dd>
+                </div>
+                <div>
+                  <dt>車位數</dt>
+                  <dd>汽車350格(含婦幼車格7格、含身心障礙車格7格、含電動充電車格4格)；機車100格(含身心障礙車格2格、含電動充電車格7格)</dd>
+                </div>
+                <div>
+                  <dt>收費標準</dt>
+                  <dd>平日每小時20元(當日上限120元，隔日另計)；假日每小時30元(當日上限200元，隔日另計)；機車每次20元，隔日另計</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="map-wrap">
+              <iframe
+                title="金山區中角灣停車場 Google 地圖"
+                src="https://www.google.com/maps?q=%E9%87%91%E5%B1%B1%E5%8D%80%E4%B8%AD%E8%A7%92%E7%81%A3%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E6%96%B0%E5%8C%97%E5%B8%82%E9%87%91%E5%B1%B1%E5%8D%80%E6%B5%B7%E8%88%88%E8%B7%AF180-3%E8%99%9F%E5%B0%8D%E9%9D%A2&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="location-body">
+              <h3>金山區中角灣停車場</h3>
+              <dl class="location-info">
+                <div class="license-row">
+                  <dt>停車場登記證編號</dt>
+                  <dd>７１４１</dd>
+                </div>
+                <div>
+                  <dt>地址</dt>
+                  <dd>新北市金山區海興路180-3號對面</dd>
+                </div>
+                <div>
+                  <dt>營業時間</dt>
+                  <dd>24小時</dd>
+                </div>
+                <div>
+                  <dt>車位數</dt>
+                  <dd>79格(含婦幼車格2格、含身心障礙車格2格)</dd>
+                </div>
+                <div>
+                  <dt>收費標準</dt>
+                  <dd>平日每8小時計次60元；假日每8小時計次120元；入場未滿10分鐘離場免費</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="map-wrap">
+              <iframe
+                title="大安區大安國宅地下停車場 Google 地圖"
+                src="https://www.google.com/maps?q=%E5%A4%A7%E5%AE%89%E5%8D%80%E5%A4%A7%E5%AE%89%E5%9C%8B%E5%AE%85%E5%9C%B0%E4%B8%8B%E5%81%9C%E8%BB%8A%E5%A0%B4%20%E8%87%BA%E5%8C%97%E5%B8%82%E5%A4%A7%E5%AE%89%E5%8D%80%E4%BF%A1%E7%BE%A9%E8%B7%AF%E4%B8%89%E6%AE%B5134%E5%B7%B740%E8%99%9F&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="location-body">
+              <h3>大安區大安國宅地下停車場</h3>
+              <dl class="location-info">
+                <div class="license-row">
+                  <dt>停車場登記證編號</dt>
+                  <dd>１１８４－１２</dd>
+                </div>
+                <div>
+                  <dt>地址</dt>
+                  <dd>臺北市大安區信義路三段134巷40號</dd>
+                </div>
+                <div>
+                  <dt>營業時間</dt>
+                  <dd>24小時</dd>
+                </div>
+                <div>
+                  <dt>車位數</dt>
+                  <dd>204格(含婦幼車格4格、含身心障礙車格4格)</dd>
+                </div>
+                <div>
+                  <dt>收費標準</dt>
+                  <dd>每小時40元(當日上限350元)；平日08點-18點當日上限150元，逾時另計</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="map-wrap">
+              <iframe
+                title="金山區中角灣遊客中心（依海廚房） Google 地圖"
+                src="https://www.google.com/maps?q=%E9%87%91%E5%B1%B1%E5%8D%80%E4%B8%AD%E8%A7%92%E7%81%A3%E9%81%8A%E5%AE%A2%E4%B8%AD%E5%BF%83%EF%BC%88%E4%BE%9D%E6%B5%B7%E5%BB%9A%E6%88%BF%EF%BC%89%20%E6%96%B0%E5%8C%97%E5%B8%82%E9%87%91%E5%B1%B1%E5%8D%80%E6%B5%B7%E8%88%88%E8%B7%AF180-3%E8%99%9F&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="location-body">
+              <h3>金山區中角灣遊客中心（依海廚房）</h3>
+              <dl class="location-info">
+                <div>
+                  <dt>地址</dt>
+                  <dd>新北市金山區海興路180-3號</dd>
+                </div>
+                <div>
+                  <dt>營業時間</dt>
+                  <dd>夏季<br>
+                    遊客中心服務時段 09：00－18：00<br>
+                    服務洽詢：(02)2408-2319<br>
+                    餐飲平日服務時段 09：00－18：00<br>
+                    餐飲假日服務時段 10：00－19：00<br>
+                    依海廚房 服務洽詢：0972-097293</dd>
+                </div>
+                <div>
+                  <dt>室內席數</dt>
+                  <dd>10桌(可容納上限約50人)</dd>
+                </div>
+                <div>
+                  <dt>室外席數</dt>
+                  <dd>２樓露天咖啡 目前建置中</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 月租 CTA：不嵌入表單，開放時按鈕連到 Google 表單 -->
+    <section class="section" id="monthly-rent">
+      <div class="container">
+        <div class="rent-cta">
+          <div class="rent-cta-content">
+            <span class="rent-status" id="rentStatus">目前開放</span>
+            <h2 id="rentTitle">需要申請月租車位嗎？</h2>
+            <p id="rentDescription">
+              開放申請期間，請點擊下方按鈕前往 Google 表單填寫資料；實際名額仍須由管理人員確認。
+            </p>
+            <a
+              class="btn btn-accent"
+              id="rentButton"
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+              前往 Google 表單
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 主要服務 -->
+    <section class="section section-soft" id="services">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="eyebrow">Our Services</span>
+          <h2>主要服務</h2>
+          <p></p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="images/37563343-s-2_orig.jpg"
+                alt="停車場開發與規劃示意照片"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-content">
+              <h3>停車場經營管理</h3>
+              <p>停車場相關工程規劃<br>停車場管理顧問</p>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-image">
+              <img
+                src="images/105444857-s-2_orig.jpg"
+                alt="停車場開發與規劃示意照片"
+                loading="lazy"
+              />
+            </div>
+            <div class="service-content">
+              <h3>共同開發</h3>
+              <p>同業合作開發<br>空地委託合作開發<br>經營管理規劃與諮詢</p>
+          </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 關於我們 -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-team" aria-label="團隊成員">
+          <span class="eyebrow">The Team</span>
+          <article class="team-member">
+            <div class="team-member-image">
+              <img
+                src="images/211a0020-2_orig.jpg"
+                alt="團隊成員 A"
+                loading="lazy"
+              />
+            </div>
+            <div class="team-member-name">總管理室特助</div>
+          </article>
+
+          <article class="team-member">
+            <div class="team-member-image">
+              <img
+                src="images/215-2_orig.jpg"
+                alt="團隊成員 B"
+                loading="lazy"
+              />
+            </div>
+            <div class="team-member-name">工程部經理張宏毅</div>
+          </article>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">About Sheen Car</span>
+          <h2>以專業流程，提供穩定可靠的停車服務。</h2>
+          <p>
+            申鎧國際股份有限公司成立於 2015 年
+          </p>
+          <p>
+            自2024年09月起導入 ISO 9001：2015品質管理系統，秉持著『顧客優先　服務至上』的精神視客如親，期許提供優質服務給每一位蒞臨申鎧的貴賓。
+          </p>
+
+          <div class="about-points">
+            <div class="about-point">✓ 專業營運團隊</div>
+            <div class="about-point">✓ 品質管理流程</div>
+            <div class="about-point">✓ 場域客製規劃</div>
+            <div class="about-point">✓ 即時問題處理</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 07 Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-mark"></span>
+            <span class="logo-text">
+              申鎧國際
+              <small>SHEEN CAR PARKING</small>
+            </span>
+          </div>
+          <p>專業停車場開發、工程規劃、經營管理與顧問服務。</p>
+        </div>
+
+        <div>
+          <div class="footer-title">聯絡資訊</div>
+          <div class="footer-list">
+            <span>電話：02-2601-6611</span>
+            <a href="mailto:ski.6630392@gmail.com">ski.6630392@gmail.com</a>
+            <span>統一編號：24656647</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">網站導覽</div>
+          <div class="footer-list">
+            <a href="#news">最新消息</a>
+            <a href="#locations">營業據點</a>
+            <a href="#monthly-rent">月租申請</a>
+            <a href="#services">主要服務</a>
+            <a href="#about">關於我們</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 申鎧國際股份有限公司 All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 30);
+    });
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    mainNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // 最新消息：同一時間只展開一則
+    document.querySelectorAll(".news-trigger").forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const currentItem = trigger.closest(".news-item");
+        const willOpen = !currentItem.classList.contains("open");
+
+        document.querySelectorAll(".news-item").forEach((item) => {
+          item.classList.remove("open");
+          item.querySelector(".news-trigger").setAttribute("aria-expanded", "false");
+        });
+
+        if (willOpen) {
+          currentItem.classList.add("open");
+          trigger.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+
+    /*
+      月租申請設定：
+      1. 開放申請：MONTHLY_RENT_OPEN 改成 true
+      2. 暫停申請：MONTHLY_RENT_OPEN 改成 false
+      3. GOOGLE_FORM_URL 換成 Google 表單的公開填寫網址
+    */
+    const MONTHLY_RENT_OPEN = false;
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/你的Google表單ID/viewform";
+
+    const rentStatus = document.getElementById("rentStatus");
+    const rentTitle = document.getElementById("rentTitle");
+    const rentDescription = document.getElementById("rentDescription");
+    const rentButton = document.getElementById("rentButton");
+
+    function updateMonthlyRent() {
+      if (MONTHLY_RENT_OPEN) {
+        rentStatus.textContent = "目前開放";
+        rentStatus.classList.remove("closed");
+        rentTitle.textContent = "需要申請月租車位嗎？";
+        rentDescription.textContent =
+          "開放申請期間，請點擊下方按鈕前往 Google 表單填寫資料；實際名額仍須由管理人員確認。";
+        rentButton.textContent = "前往 Google 表單";
+        rentButton.href = GOOGLE_FORM_URL;
+        rentButton.classList.remove("disabled");
+        rentButton.setAttribute("target", "_blank");
+      } else {
+        rentStatus.textContent = "暫停受理";
+        rentStatus.classList.add("closed");
+        rentTitle.textContent = "目前暫停受理月租申請";
+        rentDescription.textContent =
+          "月租名額將依各停車場車位狀況機動開放，請留意最新消息。";
+        rentButton.textContent = "目前未開放";
+        rentButton.removeAttribute("href");
+        rentButton.removeAttribute("target");
+        rentButton.classList.add("disabled");
+      }
+    }
+
+    updateMonthlyRent();
+
+    // 導覽列目前區塊提示
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + entry.target.id
+            );
+          });
+        });
+      },
+      { rootMargin: "-40% 0px -52% 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+  </script>
+</body>
+</html>
